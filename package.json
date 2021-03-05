@@ -1,0 +1,11 @@
+{
+  "name": "mastera-studio",
+  "version": "0.0.1",
+  "description": "React + Redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Elena Romanova",
+  "license": "ISC"
+}

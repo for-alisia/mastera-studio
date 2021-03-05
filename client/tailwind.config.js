@@ -1,0 +1,73 @@
+module.exports = {
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          10: '#ffdad3',
+          20: '#ffcec4',
+          30: '#ffc2b6',
+          40: '#ffb6a8',
+          50: '#ffaa9a',
+          60: '#f7a595',
+          70: '#f0a091',
+          80: '#e89b8c',
+          90: '#e09688',
+        },
+        secondary: {
+          10: '#e4a99e',
+          20: '#db8d7f',
+          30: '#d27260',
+          40: '#ca5641',
+          50: '#C13B22',
+          60: '#a6331d',
+          70: '#8b2a18',
+          80: '#702214',
+          90: '#551a0f',
+        },
+        dark: {
+          10: '#4d4d4d',
+          20: '#3f3f3f',
+          30: '#313131',
+          40: '#232323',
+          50: '#151515',
+          60: '#121212',
+          70: '#101010',
+          80: '#0a0a0a',
+          90: '#030303',
+        },
+        light: {
+          10: '#fefefe',
+          20: '#fcfcfc',
+          30: '#fbfbfb',
+          40: '#fafafa',
+          50: '#F9F9F9',
+          60: '#eaeaea',
+          70: '#dbdbdb',
+          80: '#cccccc',
+          90: '#bdbdbd',
+        },
+        cover: {
+          10: '#f5f0ec',
+          20: '#f3eee9',
+          30: '#f2ece6',
+          40: '#f0eae4',
+          50: '#EFE8E1',
+          60: '#d9d3cd',
+          70: '#d9d3cd',
+          80: '#c4beb9',
+          90: '#aea9a4',
+        },
+      },
+      fontFamily: {
+        primary: 'Raleway, sans-serif',
+        secondary: 'Arvo, serif',
+      },
+    },
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+};
