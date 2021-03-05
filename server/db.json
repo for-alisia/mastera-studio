@@ -106,27 +106,27 @@
   "reviews": [
     {
       "id": 1,
-      "name": "Елена Соколова",
-      "masterId": 1,
-      "avatar": "/some/path",
+      "client": "Ann Grider",
+      "master": "Jane Smith",
+      "img": "/images/review1-1x.jpg",
       "vkLink": "https://vk.com/elena_sokolova",
-      "description": "Отличный салон, где всегда приятно провести время. Удобно расположен в самом центре города, недалеко от моей работы. К Анне обращаюсь уже не первый раз и результат всегда превосходит мои ожидания. Делала стрижку, окрашивание и уходовые процедуры. Все всегда на высшем уровне. Отдельно хочется отметить косметику, на которой работают девочки. Она реально классная. Волосы даже после окрашивания мягкие, послушные и блестящие. Спасибо Анне, администратору Веронике и всем девочкам, которые там работают."
+      "content": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. "
     },
     {
       "id": 2,
-      "name": "Алина Заборская",
-      "avatar": "/some/path",
-      "masterId": 2,
-      "vkLink": "https://vk.com/alina_z",
-      "description": "Отличный салон, где всегда приятно провести время. Удобно расположен в самом центре города, недалеко от моей работы. К Анне обращаюсь уже не первый раз и результат всегда превосходит мои ожидания. Делала стрижку, окрашивание и уходовые процедуры. Все всегда на высшем уровне. Отдельно хочется отметить косметику, на которой работают девочки. Она реально классная. Волосы даже после окрашивания мягкие, послушные и блестящие. Спасибо Анне, администратору Веронике и всем девочкам, которые там работают."
+      "client": "Lisa Harold",
+      "master": "Jane Smith",
+      "img": "/images/review1-1x.jpg",
+      "vkLink": "https://vk.com/elena_sokolova",
+      "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
     },
     {
       "id": 3,
-      "name": "Юлия Китаева",
-      "avatar": "/some/path",
-      "masterId": 4,
-      "vkLink": "https://vk.com/ritaeva",
-      "description": "Отличный салон, где всегда приятно провести время. Удобно расположен в самом центре города, недалеко от моей работы. К Анне обращаюсь уже не первый раз и результат всегда превосходит мои ожидания. Делала стрижку, окрашивание и уходовые процедуры. Все всегда на высшем уровне. Отдельно хочется отметить косметику, на которой работают девочки. Она реально классная. Волосы даже после окрашивания мягкие, послушные и блестящие. Спасибо Анне, администратору Веронике и всем девочкам, которые там работают."
+      "client": "Eva Reno",
+      "master": "Jane Smith",
+      "img": "/images/review1-1x.jpg",
+      "vkLink": "https://vk.com/elena_sokolova",
+      "content": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
     }
   ]
 }

@@ -3,18 +3,22 @@ import classNames from 'classnames';
 interface TitleProps {
   tag: string;
   color?: string;
+  mb?: string;
+  alignment?: 'left' | 'center' | 'right';
 }
 
-const Title: React.FC<TitleProps> = ({ children, tag, color }) => {
+const Title: React.FC<TitleProps> = ({ children, tag, color, mb, alignment }) => {
   let titleClasses = classNames({
     uppercase: true,
     'text-2xl': true,
     'font-medium': true,
     'text-secondary-50': !color,
     'tracking-wide': true,
-    'mb-12': true,
+    'mb-20': !mb,
   });
   if (color) titleClasses += ` text-${color}`;
+  if (mb) titleClasses += ` mb-${mb}`;
+  if (alignment) titleClasses += ` text-${alignment}`;
 
   switch (tag) {
     case 'h1':

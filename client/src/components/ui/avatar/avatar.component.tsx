@@ -5,12 +5,19 @@ import styled from 'styled-components';
 /** Components */
 import Image from '../image';
 
+/** Models */
+import { AdditionalImage } from '../../models';
+
 /** Images */
 import { ReactComponent as CrossSvg } from '../../../assets/plus.icon.svg';
 
 interface AvatarProps {
   rounded?: boolean;
   clickHandler: () => void;
+  imgSrc: string;
+  imgAlt: string;
+  retinaSrc?: string;
+  extraImgs?: AdditionalImage[];
 }
 
 const ImageWrapperStyled = styled.div`
@@ -49,7 +56,14 @@ const ImageWrapperStyled = styled.div`
   }
 `;
 
-const Avatar: React.FC<AvatarProps> = ({ rounded, clickHandler }) => {
+const Avatar: React.FC<AvatarProps> = ({
+  rounded,
+  clickHandler,
+  imgSrc,
+  retinaSrc,
+  imgAlt,
+  extraImgs,
+}) => {
   let avatarClasses = className({
     'rounded-full': rounded,
     'overflow-hidden': rounded,
@@ -58,12 +72,12 @@ const Avatar: React.FC<AvatarProps> = ({ rounded, clickHandler }) => {
     relative: true,
     'cursor-pointer': true,
   });
-  let avatarWrapperClasses = `2xl:h-96 2xl:w-96 xl:h-80 xl:w-80 lg:h-72 lg:w-72 md:h-64 md:w-64 h-56 w-56 flex justify-center items-center border-primary-50 border rounded-full`;
+  let avatarWrapperClasses = `2xl:h-90 2xl:w-90 xl:h-80 xl:w-80 lg:h-72 lg:w-72 md:h-64 md:w-64 h-56 w-56 flex justify-center items-center border-primary-50 border rounded-full mb-10`;
   return (
     <div className={avatarWrapperClasses}>
       <ImageWrapperStyled className={avatarClasses} onClick={clickHandler}>
         <CrossSvg />
-        <Image src="/images/review1-1x.jpg" alt="Review 1" />
+        <Image src={imgSrc} alt={imgAlt} retinaSrc={retinaSrc} sources={extraImgs} />
       </ImageWrapperStyled>
     </div>
   );

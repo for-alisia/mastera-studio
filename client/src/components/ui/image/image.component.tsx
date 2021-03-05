@@ -1,9 +1,5 @@
-interface AdditionalImage {
-  breakpoint: string;
-  src: string;
-  retinaSrc: string;
-}
-
+/** Models */
+import { AdditionalImage } from '../../models';
 interface ImageProps {
   src: string;
   alt: string;
@@ -19,7 +15,12 @@ const Image: React.FC<ImageProps> = ({ src, alt, retinaSrc, sources }) => {
           <source srcSet={`${src} 1x, ${retinaSrc} 2x`} media={breakpoint} />
         ))}
 
-      <img srcSet={retinaSrc && `${src} 1x, ${retinaSrc} 2x`} alt={alt} src={src} />
+      <img
+        srcSet={retinaSrc && `${src} 1x, ${retinaSrc} 2x`}
+        alt={alt}
+        src={src}
+        className="object-cover object-center w-full"
+      />
     </picture>
   );
 };

@@ -1,13 +1,13 @@
 /** Components */
 import { Section, Container, Title } from '../../components/ui';
-import { ReviewCard } from '../../components/elements';
+import { ReviewList } from '../../components/elements';
 
 const HomePage = () => {
   return (
     <Section background="cover-50">
       <Container>
         <Title tag="h3">Reviews</Title>
-        <ReviewCard />
+        <ReviewList />
       </Container>
     </Section>
   );

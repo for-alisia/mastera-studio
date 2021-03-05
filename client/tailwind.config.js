@@ -64,6 +64,13 @@ module.exports = {
         primary: 'Raleway, sans-serif',
         secondary: 'Arvo, serif',
       },
+      maxWidth: {
+        '33p': '33%',
+        '50p': '50%',
+        '25p': '25%',
+        '75p': '75%',
+        '66p': '66%',
+      },
     },
   },
   variants: {
