@@ -9,7 +9,7 @@ const Title: React.FC<TitleProps> = ({ children, tag, color }) => {
   let titleClasses = classNames({
     uppercase: true,
     'text-2xl': true,
-    'font-semibold': true,
+    'font-medium': true,
     'text-secondary-50': !color,
     'tracking-wide': true,
     'mb-12': true,
