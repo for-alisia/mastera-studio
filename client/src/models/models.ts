@@ -12,3 +12,10 @@ export interface Review {
   img: string;
   extraImgs?: AdditionalImage[];
 }
+
+export interface IModal {
+  isOpen: boolean;
+  image: string;
+  title: string;
+  closeHandler: () => void;
+}

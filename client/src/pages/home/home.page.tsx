@@ -1,6 +1,6 @@
 /** Components */
 import { Section, Container, Title } from '../../components/ui';
-import { ReviewList } from '../../components/elements';
+import { ReviewList } from '../../components/reviews';
 
 const HomePage = () => {
   return (

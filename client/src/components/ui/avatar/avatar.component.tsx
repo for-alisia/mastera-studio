@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Image from '../image';
 
 /** Models */
-import { AdditionalImage } from '../../models';
+import { AdditionalImage } from '../../../models/models';
 
 /** Images */
 import { ReactComponent as CrossSvg } from '../../../assets/plus.icon.svg';
@@ -72,7 +72,7 @@ const Avatar: React.FC<AvatarProps> = ({
     relative: true,
     'cursor-pointer': true,
   });
-  let avatarWrapperClasses = `2xl:h-90 2xl:w-90 xl:h-80 xl:w-80 lg:h-72 lg:w-72 md:h-64 md:w-64 h-56 w-56 flex justify-center items-center border-primary-50 border rounded-full mb-10`;
+  let avatarWrapperClasses = `2xl:h-80 2xl:w-80 xl:h-72 xl:w-72 lg:h-64 lg:w-64 md:h-56 md:w-56 h-48 w-48 flex justify-center items-center border-primary-50 border rounded-full mb-10`;
   return (
     <div className={avatarWrapperClasses}>
       <ImageWrapperStyled className={avatarClasses} onClick={clickHandler}>

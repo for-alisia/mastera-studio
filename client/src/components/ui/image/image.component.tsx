@@ -1,5 +1,5 @@
 /** Models */
-import { AdditionalImage } from '../../models';
+import { AdditionalImage } from '../../../models/models';
 interface ImageProps {
   src: string;
   alt: string;

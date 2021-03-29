@@ -5,8 +5,8 @@ import { ReactComponent as ArrowRight } from '../../../assets/arrow-right.icon.s
 interface SliderControlsProps {
   nextClickHandler: () => void;
   prevClickHandler: () => void;
-  currentPage: number;
-  pages: number;
+  currentPage: string;
+  pages: string;
 }
 
 const SliderControls: React.FC<SliderControlsProps> = ({
@@ -22,7 +22,7 @@ const SliderControls: React.FC<SliderControlsProps> = ({
       <div className={arrowClasses} style={{ borderRight: '1px solid' }} onClick={prevClickHandler}>
         <ArrowLeft />
       </div>
-      <div className="opacity-50 text-2xl">
+      <div className="opacity-50 text-xl">
         {currentPage}/{pages}
       </div>
       <div className={arrowClasses} style={{ borderLeft: '1px solid' }} onClick={nextClickHandler}>
