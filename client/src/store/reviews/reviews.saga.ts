@@ -13,8 +13,8 @@ import API from '../../api';
 
 export function* fetchReviewsAsync() {
   try {
-    const result: Review[] = yield call(API.getReviews);
-    yield put(fetchReviewsSuccess(result));
+    const result: { data: Review[] } = yield call(API.getReviews);
+    yield put(fetchReviewsSuccess(result.data));
   } catch (error) {
     yield put(fetchReviewsFailed(error.message));
   }

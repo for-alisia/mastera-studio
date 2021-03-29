@@ -8,7 +8,6 @@ const SpanStyled = styled.span`
     position: absolute;
     width: 100%;
     height: 1px;
-    background-color: ${(props) => props.theme.colors.secondary};
     bottom: 0;
     transform: scale(0);
     transition: all 0.3s ease;
