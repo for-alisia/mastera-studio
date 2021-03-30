@@ -1,28 +1,25 @@
 /** Dependencies */
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+
+/** Hooks */
+import { useTypedSelector, useActions } from '../../../hooks';
 
 /** Components */
 import ReviewCard from '../review-card';
 import { SliderControls } from '../../ui';
 
-/** Models */
-import { Review } from '../../../models/models';
-
 const ReviewList = () => {
-  const [reviews, setReviews] = useState<Review[] | undefined>();
   const [page, setPage] = useState(1);
-  const [pages, setPages] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(3);
+
+  const postPerPage = 3;
+  const pages = 3;
+
+  const reviews = useTypedSelector(({ reviews: { data } }) => Object.values(data));
+  const { fetchReviewsStart } = useActions();
 
   useEffect(() => {
-    (async () => {
-      const { data } = await axios.get<Review[]>('http://localhost:3000/reviews');
-      setReviews(data);
-      setPage(1);
-      setPages(Math.ceil(data.length / postPerPage));
-    })();
-  }, [postPerPage]);
+    fetchReviewsStart();
+  }, [fetchReviewsStart]);
 
   return (
     <>
@@ -30,7 +27,7 @@ const ReviewList = () => {
         {reviews &&
           reviews
             .filter((_, idx) => idx < postPerPage)
-            .map((review: Review) => <ReviewCard {...review} key={review.id} />)}
+            .map((review) => <ReviewCard {...review} key={review.id} />)}
       </div>
       {pages >= 2 && (
         <SliderControls
