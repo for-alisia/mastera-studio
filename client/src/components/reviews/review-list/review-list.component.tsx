@@ -9,32 +9,58 @@ import ReviewCard from '../review-card';
 import { SliderControls } from '../../ui';
 
 const ReviewList = () => {
-  const [page, setPage] = useState(1);
-
-  const postPerPage = 3;
-  const pages = 3;
+  const [postsPerPage, setPostsPerPage] = useState(3);
 
   const reviews = useTypedSelector(({ reviews: { data } }) => Object.values(data));
+  const page = useTypedSelector(({ reviews: { currentPage } }) => currentPage);
+  const pages = useTypedSelector(({ reviews: { totalPages } }) => totalPages);
+
   const { fetchReviewsStart } = useActions();
 
   useEffect(() => {
-    fetchReviewsStart();
-  }, [fetchReviewsStart]);
+    fetchReviewsStart(page, postsPerPage);
+  }, [fetchReviewsStart, page, postsPerPage]);
+
+  useEffect(() => {
+    const resizeHandler = () => {
+      if (window.innerWidth < 1060 && window.innerWidth > 700) {
+        setPostsPerPage(2);
+      } else if (window.innerWidth < 700) {
+        console.log('<700');
+        setPostsPerPage(1);
+      } else {
+        setPostsPerPage(3);
+      }
+    };
+
+    window.addEventListener('resize', resizeHandler);
+
+    return () => {
+      window.removeEventListener('resize', resizeHandler);
+    };
+  }, []);
+
+  const nextClickHandler = () => {
+    const next = page === pages ? 1 : page + 1;
+    fetchReviewsStart(next, postsPerPage);
+  };
+
+  const prevClickHandler = () => {
+    const prev = page === 1 ? pages : page - 1;
+    fetchReviewsStart(prev, postsPerPage);
+  };
 
   return (
     <>
       <div className="flex mb-6 justify-center">
-        {reviews &&
-          reviews
-            .filter((_, idx) => idx < postPerPage)
-            .map((review) => <ReviewCard {...review} key={review.id} />)}
+        {reviews && reviews.map((review) => <ReviewCard {...review} key={review.id} />)}
       </div>
       {pages >= 2 && (
         <SliderControls
           currentPage={`0${page.toString()}`}
           pages={`0${pages.toString()}`}
-          nextClickHandler={() => {}}
-          prevClickHandler={() => {}}
+          nextClickHandler={nextClickHandler}
+          prevClickHandler={prevClickHandler}
         />
       )}
     </>

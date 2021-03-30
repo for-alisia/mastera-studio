@@ -14,12 +14,16 @@ interface ReviewState {
   data: {
     [key: string]: Review;
   };
+  totalPages: number;
+  currentPage: number;
 }
 
 const initialState: ReviewState = {
   loading: false,
   error: null,
   data: {},
+  totalPages: 1,
+  currentPage: 1,
 };
 
 const reviewsReducer = produce(
@@ -33,10 +37,12 @@ const reviewsReducer = produce(
       case ReviewsActionType.FETCH_REVIEWS_SUCCESS:
         state.loading = false;
         state.error = null;
-        state.data = action.payload.reduce((acc, review) => {
+        state.data = action.payload.reviews.reduce((acc, review) => {
           acc[review.id] = review;
           return acc;
         }, {} as ReviewState['data']);
+        state.totalPages = Math.ceil(action.payload.totalPages / action.payload.postsPerPage);
+        state.currentPage = action.payload.currentPage;
 
         return state;
       case ReviewsActionType.FETCH_REVIEWS_FAILED:

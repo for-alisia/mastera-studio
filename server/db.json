@@ -135,6 +135,14 @@
       "img": "/images/review1-1x.jpg",
       "vkLink": "https://vk.com/elena_sokolova",
       "content": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
+    },
+    {
+      "id": 5,
+      "client": "Olga Butik",
+      "master": "Jane Smith",
+      "img": "/images/review1-1x.jpg",
+      "vkLink": "https://vk.com/elena_sokolova",
+      "content": "Cool story about this master: it's a test to get more information about it. Try to ask me something more about it."
     }
   ]
 }
