@@ -52,12 +52,11 @@ const ImageWrapperStyled = styled.div`
   }
 `;
 
-const Avatar: React.FC<AvatarProps> = ({ rounded, clickHandler, imgSrc, retinaSrc, imgAlt }) => {
+const Avatar: React.FC<AvatarProps> = ({ rounded, clickHandler, imgSrc, imgAlt }) => {
   let avatarClasses = className({
     'rounded-full': rounded,
     'overflow-hidden': rounded,
-    'w-10/12': rounded,
-    'h-10/12': rounded,
+    '2xl:h-72 2xl:w-72 xl:h-64 xl:w-64 lg:h-60 lg:w-60 md:h-52 md:w-52 h-44 w-44': true,
     relative: true,
     'cursor-pointer': true,
   });
@@ -66,7 +65,7 @@ const Avatar: React.FC<AvatarProps> = ({ rounded, clickHandler, imgSrc, retinaSr
     <div className={avatarWrapperClasses}>
       <ImageWrapperStyled className={avatarClasses} onClick={clickHandler}>
         <CrossSvg />
-        <Image src={imgSrc} alt={imgAlt} retinaSrc={retinaSrc} />
+        <Image src={imgSrc} alt={imgAlt} />
       </ImageWrapperStyled>
     </div>
   );

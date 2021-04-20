@@ -19,17 +19,17 @@ const ReviewCard: React.FC<Review> = ({ client, master, content, img }) => {
       <Avatar
         rounded
         clickHandler={() => console.log('Clicked!')}
-        imgAlt={`${client} review`}
+        imgAlt={`Отзыв о салоне Mastera Studio клиента ${client}`}
         imgSrc={img.url}
       />
       <Title tag="h4" color="dark-50" mb="5" alignment="center">
         {client}
       </Title>
       <p className="mb-8">
-        Master: <CustomLink clickHandler={() => console.log('Clicked!')}>{master.name}</CustomLink>
+        Мастер: <CustomLink clickHandler={() => console.log('Clicked!')}>{master.name}</CustomLink>
       </p>
       <p className="text-center mb-6 text-base">{content.substring(0, 100)}...</p>
-      <CustomLink clickHandler={() => setModal(true)}>Read more</CustomLink>
+      <CustomLink clickHandler={() => setModal(true)}>Читать дальше</CustomLink>
       {modal && (
         <ReviewModal
           modal={{ isOpen: modal, title: client, closeHandler: closeModalHandler, image: img.url }}
