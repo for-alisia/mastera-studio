@@ -17,10 +17,12 @@ const ReviewList = () => {
 
   const { fetchReviewsStart } = useActions();
 
+  /** Fetch the reviews */
   useEffect(() => {
     fetchReviewsStart(page, postsPerPage);
   }, [fetchReviewsStart, page, postsPerPage]);
 
+  /** Determine reviews per page, based on window size */
   useEffect(() => {
     const resizeHandler = () => {
       if (window.innerWidth < 1060 && window.innerWidth > 700) {

@@ -54,7 +54,6 @@ export interface DeleteReviewSuccess {
 }
 
 /** Editing a Review */
-
 export interface EditReviewStart {
   type: ReviewsActionType.EDIT_REVIEW_START;
   payload: string;
