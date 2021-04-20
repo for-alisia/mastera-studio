@@ -17,7 +17,7 @@ export interface FetchReviewsFailed {
 
 export interface FetchReviewsSuccess {
   type: ReviewsActionType.FETCH_REVIEWS_SUCCESS;
-  payload: { reviews: Review[]; totalPages: number; currentPage: number; postsPerPage: number };
+  payload: { reviews: Review[]; totalCount: number; currentPage: number; postsPerPage: number };
 }
 
 /** Creating a new Review */

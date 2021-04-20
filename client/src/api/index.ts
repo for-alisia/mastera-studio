@@ -13,7 +13,7 @@ const axiosInst = axios.create({
 
 const API = {
   getReviews(page: number, postsPerPage: number) {
-    return axiosInst.get<Review[]>(`/reviews?_page=${page}&_limit=${postsPerPage}`);
+    return axiosInst.get<Review[]>(`/reviews?_start=${page * postsPerPage}&_limit=${postsPerPage}`);
   },
 };
 

@@ -14,14 +14,10 @@ import API from '../../api';
 
 export function* fetchReviewsAsync({ payload: { page, postsPerPage } }: FetchReviewsStart) {
   try {
-    const result: { data: Review[]; headers: { 'x-total-count': number } } = yield call(
-      API.getReviews,
-      page,
-      postsPerPage
-    );
+    const result: { data: Review[] } = yield call(API.getReviews, page, postsPerPage);
     console.log(result);
-    const totalPages = +result.headers['x-total-count'];
-    yield put(fetchReviewsSuccess(result.data, totalPages, page, postsPerPage));
+    // TODO: Add separate fetch to count the whole reviews (insted 3)
+    yield put(fetchReviewsSuccess(result.data, 7, page, postsPerPage));
   } catch (error) {
     yield put(fetchReviewsFailed(error.message));
   }

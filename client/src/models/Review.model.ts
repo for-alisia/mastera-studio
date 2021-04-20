@@ -1,10 +1,11 @@
-import { AdditionalImage } from './models';
-
+import { CloudImage } from './CloudImage.model';
+import { Master } from './Master.model';
 export interface Review {
-  id: number;
+  id: string;
   client: string;
-  master: string;
+  master: Master;
   content: string;
-  img: string;
-  extraImgs?: AdditionalImage[];
+  img: CloudImage;
+  original: string;
+  createdAt?: string;
 }

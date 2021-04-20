@@ -41,7 +41,7 @@ const reviewsReducer = produce(
           acc[review.id] = review;
           return acc;
         }, {} as ReviewState['data']);
-        state.totalPages = Math.ceil(action.payload.totalPages / action.payload.postsPerPage);
+        state.totalPages = Math.ceil(action.payload.totalCount / action.payload.postsPerPage);
         state.currentPage = action.payload.currentPage;
 
         return state;

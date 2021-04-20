@@ -11,12 +11,12 @@ export const fetchReviewsStart = (page: number, postsPerPage: number): ReviewAct
 
 export const fetchReviewsSuccess = (
   reviews: Review[],
-  totalPages: number,
+  totalCount: number,
   currentPage: number,
   postsPerPage: number
 ): ReviewAction => ({
   type: ReviewsActionType.FETCH_REVIEWS_SUCCESS,
-  payload: { reviews, totalPages, currentPage, postsPerPage },
+  payload: { reviews, totalCount, currentPage, postsPerPage },
 });
 
 export const fetchReviewsFailed = (errorMsg: string): ReviewAction => ({

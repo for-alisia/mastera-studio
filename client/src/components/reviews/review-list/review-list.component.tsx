@@ -12,6 +12,7 @@ const ReviewList = () => {
   const [postsPerPage, setPostsPerPage] = useState(3);
 
   const reviews = useTypedSelector(({ reviews: { data } }) => Object.values(data));
+  console.log(reviews);
   const page = useTypedSelector(({ reviews: { currentPage } }) => currentPage);
   const pages = useTypedSelector(({ reviews: { totalPages } }) => totalPages);
 

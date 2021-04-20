@@ -5,9 +5,6 @@ import styled from 'styled-components';
 /** Components */
 import Image from '../image';
 
-/** Models */
-import { AdditionalImage } from '../../../models/models';
-
 /** Images */
 import { ReactComponent as CrossSvg } from '../../../assets/plus.icon.svg';
 
@@ -17,7 +14,6 @@ interface AvatarProps {
   imgSrc: string;
   imgAlt: string;
   retinaSrc?: string;
-  extraImgs?: AdditionalImage[];
 }
 
 const ImageWrapperStyled = styled.div`
@@ -56,14 +52,7 @@ const ImageWrapperStyled = styled.div`
   }
 `;
 
-const Avatar: React.FC<AvatarProps> = ({
-  rounded,
-  clickHandler,
-  imgSrc,
-  retinaSrc,
-  imgAlt,
-  extraImgs,
-}) => {
+const Avatar: React.FC<AvatarProps> = ({ rounded, clickHandler, imgSrc, retinaSrc, imgAlt }) => {
   let avatarClasses = className({
     'rounded-full': rounded,
     'overflow-hidden': rounded,
@@ -77,7 +66,7 @@ const Avatar: React.FC<AvatarProps> = ({
     <div className={avatarWrapperClasses}>
       <ImageWrapperStyled className={avatarClasses} onClick={clickHandler}>
         <CrossSvg />
-        <Image src={imgSrc} alt={imgAlt} retinaSrc={retinaSrc} sources={extraImgs} />
+        <Image src={imgSrc} alt={imgAlt} retinaSrc={retinaSrc} />
       </ImageWrapperStyled>
     </div>
   );
