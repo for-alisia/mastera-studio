@@ -22,7 +22,7 @@ const SliderControls: React.FC<SliderControlsProps> = ({
       <div className={arrowClasses} style={{ borderRight: '1px solid' }} onClick={prevClickHandler}>
         <ArrowLeft />
       </div>
-      <div className="opacity-50 text-xl">
+      <div className="opacity-50 lg:text-xl text-lg">
         {currentPage}/{pages}
       </div>
       <div className={arrowClasses} style={{ borderLeft: '1px solid' }} onClick={nextClickHandler}>

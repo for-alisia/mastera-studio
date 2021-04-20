@@ -2,7 +2,11 @@
 import { ReviewSection } from '../../components/reviews';
 
 const HomePage = () => {
-  return <ReviewSection />;
+  return (
+    <div>
+      <ReviewSection />;
+    </div>
+  );
 };
 
 export default HomePage;

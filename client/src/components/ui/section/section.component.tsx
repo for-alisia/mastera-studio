@@ -3,7 +3,11 @@ interface SectionProps {
 }
 
 const Section: React.FC<SectionProps> = ({ children, background }) => {
-  return <section className={`py-36 ${background && 'bg-' + background}`}>{children}</section>;
+  return (
+    <section className={`xl:py-36 lg:py-24 md:py-12 sm:py-6 ${background && 'bg-' + background}`}>
+      {children}
+    </section>
+  );
 };
 
 export default Section;

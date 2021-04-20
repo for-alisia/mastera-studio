@@ -56,11 +56,11 @@ const Avatar: React.FC<AvatarProps> = ({ rounded, clickHandler, imgSrc, imgAlt }
   let avatarClasses = className({
     'rounded-full': rounded,
     'overflow-hidden': rounded,
-    '2xl:h-72 2xl:w-72 xl:h-64 xl:w-64 lg:h-60 lg:w-60 md:h-52 md:w-52 h-44 w-44': true,
+    '2xl:h-72 2xl:w-72 xl:h-64 xl:w-64 lg:h-60 lg:w-60 md:h-48 md:w-48 h-60 w-60': true,
     relative: true,
     'cursor-pointer': true,
   });
-  let avatarWrapperClasses = `2xl:h-80 2xl:w-80 xl:h-72 xl:w-72 lg:h-64 lg:w-64 md:h-56 md:w-56 h-48 w-48 flex justify-center items-center border-primary-50 border rounded-full mb-10`;
+  let avatarWrapperClasses = `2xl:h-80 2xl:w-80 xl:h-72 xl:w-72 lg:h-64 lg:w-64 md:h-52 md:w-52 h-64 w-64 flex justify-center items-center border-primary-50 border rounded-full mb-10`;
   return (
     <div className={avatarWrapperClasses}>
       <ImageWrapperStyled className={avatarClasses} onClick={clickHandler}>

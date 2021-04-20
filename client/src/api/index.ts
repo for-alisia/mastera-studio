@@ -15,6 +15,9 @@ const API = {
   getReviews(page: number, postsPerPage: number) {
     return axiosInst.get<Review[]>(`/reviews?_start=${page * postsPerPage}&_limit=${postsPerPage}`);
   },
+  getReviewsCount() {
+    return axiosInst.get<number>(`/reviews/count`);
+  },
 };
 
 export default API;

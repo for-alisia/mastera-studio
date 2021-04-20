@@ -10,14 +10,14 @@ interface TitleProps {
 const Title: React.FC<TitleProps> = ({ children, tag, color, mb, alignment }) => {
   let titleClasses = classNames({
     uppercase: true,
-    'text-2xl': true,
+    'xl:text-2xl lg:text-xl md:text-lg sm:text-base': true,
     'font-medium': true,
     'text-secondary-50': !color,
     'tracking-wide': true,
-    'mb-20': !mb,
+    'xl:mb-20 lg:mb-14 md:mb-10 mb-6': !mb,
   });
   if (color) titleClasses += ` text-${color}`;
-  if (mb) titleClasses += ` mb-${mb}`;
+  if (mb) titleClasses += ` lg:mb-${mb} mb-${+mb - 2}`;
   if (alignment) titleClasses += ` text-${alignment}`;
 
   switch (tag) {

@@ -1,5 +1,4 @@
-import React from 'react';
-
+/** Components */
 import { Section, Container, Title } from '../../ui';
 import ReviewList from '../review-list';
 

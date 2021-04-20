@@ -15,7 +15,7 @@ const ReviewCard: React.FC<Review> = ({ client, master, content, img }) => {
   };
 
   return (
-    <div className="max-w-33p flex flex-col  items-center p-8">
+    <div className="xl:max-w-33p lg:max-w-50p sm:max-w-100p  flex flex-col  items-center p-8 sm:p-4 lg:p-8">
       <Avatar
         rounded
         clickHandler={() => console.log('Clicked!')}
@@ -25,7 +25,7 @@ const ReviewCard: React.FC<Review> = ({ client, master, content, img }) => {
       <Title tag="h4" color="dark-50" mb="5" alignment="center">
         {client}
       </Title>
-      <p className="mb-8">
+      <p className="xl:mb-8 lg:mb-6 mb-4">
         Мастер: <CustomLink clickHandler={() => console.log('Clicked!')}>{master.name}</CustomLink>
       </p>
       <p className="text-center mb-6 text-base">{content.substring(0, 100)}...</p>
