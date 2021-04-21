@@ -1,8 +1,8 @@
 /** Dependencies */
 import styled from 'styled-components';
 
-const SpanStyled = styled.button`
-  transition: all 0.4s ease-out;
+const ButtonStyled = styled.button`
+  transition: transform 0.4s ease-out;
   .decor-top,
   .decor-bottom {
     display: block;
@@ -28,14 +28,14 @@ interface CustomLinkProps {
 
 const CustomLink: React.FC<CustomLinkProps> = ({ children, clickHandler }) => {
   return (
-    <SpanStyled
-      className="text-secondary-40 cursor-pointer relative inline-block "
+    <ButtonStyled
+      className="text-secondary-40 cursor-pointer relative inline-block focus:outline-secondary"
       onClick={clickHandler}
     >
       <span className="decor-top absolute w-full bg-secondary-40"></span>
       <span className="decor-bottom absolute w-full bg-secondary-40"></span>
       {children}
-    </SpanStyled>
+    </ButtonStyled>
   );
 };
 

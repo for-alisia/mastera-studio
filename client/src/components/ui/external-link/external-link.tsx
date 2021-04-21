@@ -2,10 +2,11 @@ interface ExternalLinkProps {
   href: string;
 }
 const ExternalLink: React.FC<ExternalLinkProps> = ({ href, children }) => {
+  // TODO: Create fancy hover effect for this link;
   return (
     <a
       href={href}
-      className="text-secondary-50 underline hover:text-primary-70 transition-colors duration-300 ease-out focus:outline-none focus:ring-1 focus:ring-secondary-50 focus:no-underline"
+      className="text-secondary-50 underline focus:outline-secondary focus:no-underline"
       style={{ textUnderlineOffset: '4px' }}
     >
       {children}

@@ -8,6 +8,15 @@
   }
 }
 
+/* Variables */
+:root {
+  --primary: #ffaa9a;
+  --secondary: #c13b22;
+  --light: #f9f9f9;
+  --dark: #151515;
+  --cover: #efe8e1;
+}
+
 /* Styles for modals */
 @import '@reach/dialog/styles.css';
 

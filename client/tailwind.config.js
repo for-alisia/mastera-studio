@@ -80,6 +80,10 @@ module.exports = {
         '75vh': '75vh',
         full: '100%',
       },
+      outline: {
+        secondary: ['1px solid var(--secondary)', '4px'],
+        primary: ['1px solid var(--primary)', '4px'],
+      },
     },
   },
   variants: {
