@@ -39,6 +39,7 @@ const ReviewCard: React.FC<Review> = ({ client, master, content, img, original }
             closeHandler: closeReviewModalHandler,
             image: img.url,
             ariaLabel: `Прочитать отзыв ${client}`,
+            stepControl: true,
           }}
           content={content}
           master={master.name}

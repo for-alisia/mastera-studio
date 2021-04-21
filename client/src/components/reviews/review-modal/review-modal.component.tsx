@@ -1,5 +1,5 @@
 /** Components */
-import { Modal, CustomLink, ExternalLink, Icon } from '../../ui';
+import { Modal, CustomLink, ExternalLink } from '../../ui';
 
 /** Models */
 import { IModal } from '../../../models/UIModels';
@@ -20,10 +20,6 @@ const ReviewModal: React.FC<ReviewModalProps> = ({ modal, content, master, origi
       </p>
       <p className="mb-8">{content}</p>
       <ExternalLink href={original}>Прочитать отзыв в VK</ExternalLink>
-      <div className="flex justify-between">
-        <Icon name="arrow-left" color="#FFAA9A" />
-        <Icon name="arrow-right" color="#FFAA9A" />
-      </div>
     </Modal>
   );
 };

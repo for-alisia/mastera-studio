@@ -1,15 +1,16 @@
 /** Dependencies */
 import styled from 'styled-components';
 
+/** Models */
+import { MainColors } from '../../../models/UIModels';
+
 interface CrossControlProps {
   closeHandler: () => void;
-  color?: mainColors;
+  color?: MainColors;
 }
 
-type mainColors = 'primary' | 'secondary' | 'dark' | 'light' | 'cover';
-
 interface ButtonStyledProps {
-  color?: mainColors;
+  color?: MainColors;
 }
 
 const ButtonStyled = styled.button<ButtonStyledProps>`
