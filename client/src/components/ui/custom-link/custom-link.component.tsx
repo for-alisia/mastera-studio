@@ -1,10 +1,11 @@
 /** Dependencies */
 import styled from 'styled-components';
 
-const SpanStyled = styled.span`
+const SpanStyled = styled.button`
   transition: all 0.4s ease-out;
   .decor-top,
   .decor-bottom {
+    display: block;
     transform: scaleX(0);
     transition: all 0.4s ease-out;
     transform-origin: left;
@@ -25,17 +26,17 @@ interface CustomLinkProps {
   clickHandler: () => void;
 }
 
-const CustomLimk: React.FC<CustomLinkProps> = ({ children, clickHandler }) => {
+const CustomLink: React.FC<CustomLinkProps> = ({ children, clickHandler }) => {
   return (
     <SpanStyled
-      className="text-secondary-40 cursor-pointer relative inline-block"
+      className="text-secondary-40 cursor-pointer relative inline-block "
       onClick={clickHandler}
     >
-      <div className="decor-top absolute w-full bg-secondary-40"></div>
-      <div className="decor-bottom absolute w-full bg-secondary-40"></div>
+      <span className="decor-top absolute w-full bg-secondary-40"></span>
+      <span className="decor-bottom absolute w-full bg-secondary-40"></span>
       {children}
     </SpanStyled>
   );
 };
 
-export default CustomLimk;
+export default CustomLink;

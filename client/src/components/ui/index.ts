@@ -7,3 +7,5 @@ export { default as Image } from './image';
 export { default as CustomLink } from './custom-link';
 export { default as SliderControls } from './slider-controls';
 export { default as Modal } from './modal';
+export { default as ExternalLink } from './external-link';
+export { default as Icon } from './icon';

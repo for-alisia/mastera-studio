@@ -1,33 +1,66 @@
 /** Dependencies */
-import ReactDOM from 'react-dom';
+import { Dialog } from '@reach/dialog';
+import styled from 'styled-components';
 
 /** Models */
-import { IModal } from '../../../models/models';
+import { IModal } from '../../../models/UIModels';
 
 /** Components */
 import Image from '../image';
 import Title from '../title';
 
-const Modal: React.FC<IModal> = ({ image, closeHandler, children, title }) => {
-  return ReactDOM.createPortal(
-    <div onClick={closeHandler}>
-      <div className="absolute inset-0 bg-dark-40 opacity-40"></div>
-      <div
-        className="absolute max-w-75p h-96 top-1/2 left-1/2"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div>
+const CloseCross = styled.button`
+  span {
+    display: block;
+    width: 1px;
+    height: 60px;
+    transform-origin: center center;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    transition: all 0.3s ease-out;
+  }
+
+  .first {
+    transform: rotate(45deg);
+  }
+
+  .second {
+    transform: rotate(-45deg);
+  }
+
+  &:hover .first {
+    transform: rotate(45deg) scale(1.2);
+  }
+
+  &:hover .second {
+    transform: rotate(-45deg) scale(1.2);
+  }
+`;
+
+const Modal: React.FC<IModal> = ({ image, closeHandler, children, title, isOpen, ariaLabel }) => {
+  return (
+    <Dialog isOpen={isOpen} onDismiss={closeHandler} aria-label={ariaLabel}>
+      <div className="flex relative min-h-75vh">
+        <CloseCross
+          aria-hidden
+          onClick={closeHandler}
+          className="absolute top-6 right-6 w-20 h-20 cursor-pointer"
+        >
+          <span className="bg-secondary-50 first"></span>
+          <span className="bg-secondary-50 second"></span>
+        </CloseCross>
+        <div className="max-w-50p">
           <Image src={image} alt={title} />
         </div>
-        <div>
-          <Title tag={'h4'} color="dark-50">
+        <div className="max-w-50p p-4 pt-24">
+          <Title tag="h5" mb={'8'}>
             {title}
           </Title>
           {children}
         </div>
       </div>
-    </div>,
-    document.getElementById('modal') as HTMLElement
+    </Dialog>
   );
 };
 

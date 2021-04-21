@@ -7,3 +7,11 @@
     font-size: 14px;
   }
 }
+
+/* Styles for modals */
+@import '@reach/dialog/styles.css';
+
+/* Clear some pre-defined modal's styles */
+[data-reach-dialog-content] {
+  padding: 0;
+}
