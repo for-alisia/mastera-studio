@@ -15,11 +15,13 @@ const ReviewModal: React.FC<ReviewModalProps> = ({ modal, content, master, origi
   console.log(modal);
   return (
     <Modal {...modal}>
-      <p className="mb-8">
+      <p className="xl:mb-8 mb-4">
         Мастер: <CustomLink clickHandler={() => {}}>{master}</CustomLink>
       </p>
-      <p className="mb-8">{content}</p>
-      <ExternalLink href={original}>Прочитать отзыв в VK</ExternalLink>
+      <p className="xl:mb-8 mb-4">{content}</p>
+      <p className="xl:mb-8 mb-4">
+        <ExternalLink href={original}>Прочитать отзыв в VK</ExternalLink>
+      </p>
     </Modal>
   );
 };

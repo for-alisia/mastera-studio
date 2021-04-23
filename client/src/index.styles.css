@@ -24,3 +24,10 @@
 [data-reach-dialog-content] {
   padding: 0;
 }
+
+@media screen and (max-width: 768px) {
+  [data-reach-dialog-content] {
+    width: 94%;
+    margin: 5% auto;
+  }
+}

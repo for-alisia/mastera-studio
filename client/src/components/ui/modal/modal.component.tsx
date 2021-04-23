@@ -23,21 +23,25 @@ const Modal: React.FC<IModal> = ({
 }) => {
   return (
     <Dialog isOpen={isOpen} onDismiss={closeHandler} aria-label={ariaLabel}>
-      <div className="flex relative min-h-75vh">
+      <div className="flex relative min-h-75vh xl:flex-row flex-col">
         <CrossControl closeHandler={closeHandler} color="secondary" />
-        <div className="max-w-50p">
+        <div className="xl:max-w-50p max-h-50vh overflow-hidden">
           <Image src={image} alt={title} />
         </div>
-        <div className="max-w-50p p-4 pt-24">
-          <Title tag="h5" mb={'8'}>
-            {title}
-          </Title>
-          {children}
+        <div className="xl:max-w-50p p-4 xl:pt-24 flex flex-col justify-between">
+          <div>
+            <Title tag="h5" mb={'4'}>
+              {title}
+            </Title>
+            {children}
+          </div>
           {stepControl && (
-            <StepControl
-              next={() => console.log('next clicked')}
-              prev={() => console.log('prev clicked')}
-            />
+            <div className="relative bottom-0">
+              <StepControl
+                next={nextStep ? nextStep : () => {}}
+                prev={prevStep ? prevStep : () => {}}
+              />
+            </div>
           )}
         </div>
       </div>
